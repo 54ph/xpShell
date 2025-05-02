@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.13)
 
-project(systraydll)
+project(stobject)
 
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 11)
@@ -32,4 +32,4 @@ set(HEADER_FILES
 )
 
 # Create the shared library (DLL)
-add_library(systray SHARED ${HEADER_FILES} ${SOURCE_FILES})
+add_library(stobject SHARED ${HEADER_FILES} ${SOURCE_FILES})
