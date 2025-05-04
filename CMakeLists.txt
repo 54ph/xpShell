@@ -5,6 +5,8 @@ project(xpShell)
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 11)
 
-include_directories(${WINDOWS_SDK_INCLUDE_DIR}) 
+include_directories(include)
 
 add_subdirectory(systray)
+add_subdirectory(inputdll)
+add_subdirectory(sndvol32)

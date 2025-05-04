@@ -15,6 +15,7 @@ set(SOURCE_FILES
     print.cpp
     stobject.cpp
     systray.c
+    systray.rc
     usbui.c
     volume.c
     windowsshell.manifest
@@ -28,6 +29,7 @@ set(HEADER_FILES
     stdafx.h
     stobject.h
     stresid.h
+    systray.h
     version.h
 )
 
