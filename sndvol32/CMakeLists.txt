@@ -32,5 +32,4 @@ set(HEADER_FILES
     vu.h
 )
 
-# Create the shared library (DLL)
-add_executable(sndvol32 SHARED ${HEADER_FILES} ${SOURCE_FILES})
+add_executable(sndvol32 WIN32 ${HEADER_FILES} ${SOURCE_FILES})

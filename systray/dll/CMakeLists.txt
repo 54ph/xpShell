@@ -1,15 +1,12 @@
 cmake_minimum_required(VERSION 3.13)
 
-project(stobject)
+project(stobject LANGUAGES CXX)
 
-set(CMAKE_C_STANDARD 11)
-set(CMAKE_CXX_STANDARD 11)
-
-# Add the source files to the project
-set(SOURCE_FILES
+add_library(stobject SHARED
     access.c
     cfact.cpp
     csc.c
+    dll.cpp
     hplug.c
     power.c
     print.cpp
@@ -21,17 +18,19 @@ set(SOURCE_FILES
     windowsshell.manifest
 )
 
-# Add the header files to the project
-set(HEADER_FILES
-    cfact.h
-    pccrdapi.h
-    stclsid.h
-    stdafx.h
-    stobject.h
-    stresid.h
-    systray.h
-    version.h
+target_precompile_headers(stobject
+    PRIVATE
+        cfact.h
+        pccrdapi.h
+        stclsid.h
+        stdafx.h
+        stobject.h
+        stresid.h
+        systray.h
+        version.h
 )
 
-# Create the shared library (DLL)
-add_library(stobject SHARED ${HEADER_FILES} ${SOURCE_FILES})
+set_source_files_properties(WindowsApplication.rc
+    PROPERTIES
+        OBJECT_DEPENDS "${CMAKE_CURRENT_LIST_DIR}/*.ico"
+)
